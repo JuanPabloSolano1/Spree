@@ -1,0 +1,33 @@
+<html>
+<style>
+  #navigation{
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  #home-page{
+    background-color: black;
+  }
+  #header{
+    background-color: black;
+  }
+</style>
+<% @body_id = 'home-page' %>
+<% content_for :sidebar do %>
+  <div id ="navigation" data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+    <%=link_to "Check the API","http://localhost:3000/api/v1/products.json?token=f10843e134b925f71ddc93eef7b5dbd3c2b69eba1831decc"%>
+  </div>
+<% end %>
+
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <% end %>
+</div>
+
+<%= products_structured_data(@products) %>
+</html>
+
+
+
