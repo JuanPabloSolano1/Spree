@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-  respond_to :html, :xml, :json
+  before_action :authenticate_spree_user!
   def index
-   @user = Spree::user_class.first
-   @api_key = @user.spree_api_key
+     user = Spree::user_class.first
+     api_key = user.spree_api_key
+     raise
    raise
   end
 end
