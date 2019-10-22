@@ -3,7 +3,5 @@ class ApplicationController < ActionController::Base
   def index
      user = Spree::user_class.first
      api_key = user.spree_api_key
-     raise
-   raise
   end
 end

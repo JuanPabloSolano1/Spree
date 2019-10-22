@@ -16,7 +16,7 @@
 <% content_for :sidebar do %>
   <div id ="navigation" data-hook="homepage_sidebar_navigation">
     <%= render partial: 'spree/shared/taxonomies' %>
-    <%=link_to "Check the API","http://localhost:3000/api/v1/products.json?token="%>
+    <%=link_to "Check the API","http://localhost:3000/api/v1/products.json?token=#{@api_key}"%>
   </div>
 <% end %>
 
