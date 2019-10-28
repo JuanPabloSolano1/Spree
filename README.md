@@ -31,6 +31,7 @@ end
 
 ExportController
 ![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.03.26.png)
+![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.01.37.png)
 ``` Ruby
 
 module Spree
