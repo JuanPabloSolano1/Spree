@@ -29,9 +29,11 @@ Spree::Core::Engine.add_routes do
 end
 ```
 
-ExportController
+Export Views
 ![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.03.26.png)
 ![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.01.37.png)
+
+Export Controller
 ``` Ruby
 
 module Spree
