@@ -162,3 +162,4 @@ fileInput.addEventListener('change', function (e) {
 </object>
 
 ```
+![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.16.59.png)
