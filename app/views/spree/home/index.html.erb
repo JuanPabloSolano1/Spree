@@ -12,12 +12,30 @@
   #header{
     background-color: black;
   }
+  #submit{
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+  #upload{
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+  }
+
 </style>
 <% @body_id = 'home-page' %>
 <% content_for :sidebar do %>
   <div id ="navigation" data-hook="homepage_sidebar_navigation">
     <%= render partial: 'spree/shared/taxonomies' %>
   </div>
+  <div id="upload">
+  <input type="file" id="fileInput">
+</div>
+ <form >
+  <input type="submit" value="Submit" id="submit">
+</form>
 <% end %>
 
 <div data-hook="homepage_products">
@@ -25,12 +43,7 @@
     <%= render partial: 'spree/shared/products', locals: { products: @products } %>
   <% end %>
 </div>
-
 <%= products_structured_data(@products) %>
-<input type="file" id="fileInput">
-<form >
-  <input type="submit" value="Submit" id="submit">
-</form>
 <script>
   let fileInput = document.getElementById('fileInput');
   let fileDisplayArea = document.getElementById('fileDisplayArea');
