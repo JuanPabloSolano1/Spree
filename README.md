@@ -150,3 +150,15 @@ fileInput.addEventListener('change', function (e) {
 
 ```
 ![image](https://github.com/JuanPabloSolano1/Spree/blob/master/Screenshot%202019-10-28%2020.10.22.png)
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<object>
+    <id type="integer">44</id>
+    <name>Spree-Card-Juan-Final-Erika</name>
+    <description>Perfect Product</description>
+    <price type="decimal">2.0</price>
+    <taxons type="array"/>
+    <variants type="array"/>
+</object>
+
+```
