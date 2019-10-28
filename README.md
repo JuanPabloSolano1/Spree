@@ -154,7 +154,7 @@ fileInput.addEventListener('change', function (e) {
 <?xml version="1.0" encoding="UTF-8" ?>
 <object>
     <id type="integer">44</id>
-    <name>Spree-Card-Juan-Final-Erika</name>
+    <name>Spree-Card-Juan-Final</name>
     <description>Perfect Product</description>
     <price type="decimal">2.0</price>
     <taxons type="array"/>
