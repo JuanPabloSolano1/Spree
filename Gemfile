@@ -33,6 +33,8 @@ gem 'rails-controller-testing'
 gem 'rspec-rails', '~> 3.8.0'
 gem 'rspec-activemodel-mocks'
 
+gem 'ransack'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

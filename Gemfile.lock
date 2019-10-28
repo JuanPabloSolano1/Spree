@@ -432,6 +432,7 @@ DEPENDENCIES
   rabl
   rails (~> 6.0.0)
   rails-controller-testing
+  ransack
   rspec-activemodel-mocks
   rspec-rails (~> 3.8.0)
   sass-rails (~> 5)

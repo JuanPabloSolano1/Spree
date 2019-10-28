@@ -1,12 +1,13 @@
+
 <html>
 <style>
   #navigation{
-    background-color: black;
+    background-color: grey;
     color: white;
     text-align: center;
   }
   #home-page{
-    background-color: black;
+    background-color: grey;
   }
   #header{
     background-color: black;
@@ -16,7 +17,6 @@
 <% content_for :sidebar do %>
   <div id ="navigation" data-hook="homepage_sidebar_navigation">
     <%= render partial: 'spree/shared/taxonomies' %>
-    <%=link_to "Check the API","http://localhost:3000/api/v1/products.json?token=#{@api_key}"%>
   </div>
 <% end %>
 
@@ -27,7 +27,53 @@
 </div>
 
 <%= products_structured_data(@products) %>
+<input type="file" id="fileInput">
+<form >
+  <input type="submit" value="Submit" id="submit">
+</form>
+<script>
+  let fileInput = document.getElementById('fileInput');
+  let fileDisplayArea = document.getElementById('fileDisplayArea');
+fileInput.addEventListener('change', function (e) {
+    event.preventDefault()
+        var file = fileInput.files[0];
+        var textType = /text.*/;
+
+        if (file.type.match(textType)) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+               let readXml = e.target.result
+               let parser = new DOMParser();
+               let doc = parser.parseFromString(readXml, "text/xml");
+
+    let submit = document.getElementById("submit")
+    submit.addEventListener("click",(event)=>{
+    event.preventDefault()
+    let name_1 = doc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    let price_1 = doc.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+    let description_1 = doc.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+    let shipping_1 = 1
+    fetch("http://localhost:3000/api/v1/products", {
+    body: `product[name]=${name_1}&product[price]=${parseInt(price_1)}&product[shipping_category_id]=${(shipping_1)}&product[description]=${description_1}`,
+     headers: {
+     "Content-Type": "application/x-www-form-urlencoded",
+     "X-Spree-Token": "f10843e134b925f71ddc93eef7b5dbd3c2b69eba1831decc"
+     },
+     method: "POST"
+   })
+            })
+    }
+
+            reader.readAsText(file);
+        } else {
+            xmlFileInfo.innerText = "File not supported!"
+        }
+  });
+</script>
 </html>
+
+
 
 
 
